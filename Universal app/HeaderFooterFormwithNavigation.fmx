@@ -1,0 +1,268 @@
+object HeaderFooterwithNavigation: THeaderFooterwithNavigation
+  Left = 0
+  Top = 0
+  Caption = 'HeaderFooter'
+  ClientHeight = 567
+  ClientWidth = 384
+  FormFactor.Width = 1440
+  FormFactor.Height = 900
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object TopToolBar: TToolBar
+    Anchors = []
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object ToolBarLabel: TLabel
+      Action = TitleAction
+      Align = Contents
+      Enabled = True
+      Size.Width = 384.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'toollabel'
+      TextSettings.HorzAlign = Center
+      Text = 'Zmiana Kolor'#243'w'
+      Visible = True
+    end
+    object btnBack: TSpeedButton
+      Action = PreviousTabAction1
+      Align = MostLeft
+      Enabled = True
+      ImageIndex = -1
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'backtoolbutton'
+      Text = 'Wstecz'
+      Visible = True
+    end
+    object btnNext: TSpeedButton
+      Action = NextTabAction1
+      Align = MostRight
+      Enabled = True
+      ImageIndex = -1
+      Position.X = 336.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'nexttoolbutton'
+      Text = 'Dalej'
+      Visible = True
+    end
+  end
+  object TabControl1: TTabControl
+    Align = Client
+    FullSize = True
+    Size.Width = 384.000000000000000000
+    Size.Height = 471.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 1
+    TabOrder = 1
+    TabPosition = None
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Caption Tab Item #1'
+      object GroupBox1: TGroupBox
+        Position.X = 16.000000000000000000
+        Position.Y = 16.000000000000000000
+        Size.Width = 345.000000000000000000
+        Size.Height = 201.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Nat'#281#380'enie kolor'#243'w'
+        TabOrder = 0
+        object ColorBox: TColorBox
+          Color = claBlack
+          Position.Y = 224.000000000000000000
+          Size.Width = 337.000000000000000000
+          Size.Height = 105.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+        end
+        object tbR: TTrackBar
+          Max = 255.000000000000000000
+          Orientation = Horizontal
+          Position.X = 8.000000000000000000
+          Position.Y = 40.000000000000000000
+          Size.Width = 249.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          OnChange = tbRChange
+        end
+        object edtR: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 6
+          MaxLength = 3
+          Text = '0'
+          Position.X = 272.000000000000000000
+          Position.Y = 40.000000000000000000
+          Size.Width = 57.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Label1: TLabel
+          StyledSettings = [Family, Size, FontColor]
+          Position.X = 288.000000000000000000
+          Position.Y = 24.000000000000000000
+          Size.Width = 49.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Style = [fsBold]
+          Text = 'R'
+        end
+        object tbG: TTrackBar
+          Max = 255.000000000000000000
+          Orientation = Horizontal
+          Position.X = 8.000000000000000000
+          Position.Y = 88.000000000000000000
+          Size.Width = 249.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          OnChange = tbRChange
+        end
+        object edtG: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 5
+          MaxLength = 3
+          Text = '0'
+          Position.X = 272.000000000000000000
+          Position.Y = 88.000000000000000000
+          Size.Width = 57.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Label2: TLabel
+          StyledSettings = [Family, Size, FontColor]
+          Position.X = 288.000000000000000000
+          Position.Y = 72.000000000000000000
+          Size.Width = 49.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Style = [fsBold]
+          Text = 'G'
+        end
+        object tbB: TTrackBar
+          Max = 255.000000000000000000
+          Orientation = Horizontal
+          Position.X = 8.000000000000000000
+          Position.Y = 136.000000000000000000
+          Size.Width = 249.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          OnChange = tbRChange
+        end
+        object edtB: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 4
+          MaxLength = 3
+          Text = '0'
+          Position.X = 272.000000000000000000
+          Position.Y = 136.000000000000000000
+          Size.Width = 57.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object Label3: TLabel
+          StyledSettings = [Family, Size, FontColor]
+          Position.X = 288.000000000000000000
+          Position.Y = 120.000000000000000000
+          Size.Width = 49.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Style = [fsBold]
+          Text = 'B'
+        end
+      end
+      object btnSend: TButton
+        Enabled = False
+        Position.X = 72.000000000000000000
+        Position.Y = 376.000000000000000000
+        Size.Width = 249.000000000000000000
+        Size.Height = 46.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Zmie'#324
+      end
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Caption Tab Item #2'
+      object lbBluetoothDevices: TListBox
+        Position.X = 8.000000000000000000
+        Position.Y = 32.000000000000000000
+        Size.Width = 369.000000000000000000
+        Size.Height = 265.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 369.000000000000000000
+        Viewport.Height = 265.000000000000000000
+      end
+      object btnSearch: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 320.000000000000000000
+        Size.Width = 281.000000000000000000
+        Size.Height = 57.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Szukaj...'
+        OnClick = btnSearchClick
+      end
+    end
+  end
+  object BottomToolBar: TToolBar
+    Align = Bottom
+    Anchors = [akLeft]
+    Position.Y = 519.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'bottomtoolbar'
+    TabOrder = 2
+  end
+  object DirectionalBlurEffect1: TDirectionalBlurEffect
+    Angle = 0.000000000000000000
+    BlurAmount = 1.000000000000000000
+  end
+  object ActionList1: TActionList
+    Left = 336
+    Top = 464
+    object TitleAction: TControlAction
+      Category = 'Tab'
+      Text = 'TitleAction'
+      OnUpdate = TitleActionUpdate
+    end
+    object PreviousTabAction1: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+      ShortCut = 137
+    end
+    object NextTabAction1: TNextTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+    end
+  end
+end
