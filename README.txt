@@ -4,7 +4,7 @@ STM_LED_tech is a simple solution to control LED strips via Bluetooth. Thanks to
 
 ## Malpfunctions
 
-Problems with UART port.
+Everything works fine.
 
 ## License
 

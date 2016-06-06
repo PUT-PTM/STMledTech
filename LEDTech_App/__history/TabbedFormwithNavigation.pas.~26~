@@ -67,7 +67,7 @@ procedure TLEDTech.btnSelectAllSwitch(Sender: TObject);
 begin
   if btnSelectAll.IsChecked then
     begin
-      LEDNumber := 101;  //100 - Turn on all diodes
+      LEDNumber := 100;
       edtLEDNumber.Enabled := false;
       btnBack.Enabled := false;
       btnNext.Enabled := false;
@@ -75,9 +75,9 @@ begin
      else
     begin
       LedNumber := StrToInt(edtLEDNumber.Text);
-      edtLEDNumber.Enabled := true;
-      btnBack.Enabled := true;
-      btnNext.Enabled := true;
+      edtLEDNumber.Enabled := false;
+      btnBack.Enabled := false;
+      btnNext.Enabled := false;
     end;
 end;
 

@@ -215,6 +215,7 @@ object LEDTech: TLEDTech
         Size.PlatformDefault = False
         TabOrder = 0
         DisableFocusEffect = True
+        ItemIndex = 0
         ItemHeight = 51.000000000000000000
         Items.Strings = (
           'None'

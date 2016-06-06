@@ -18,7 +18,7 @@ object LEDTech: TLEDTech
     Size.Height = 596.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 0
     TabPosition = PlatformDefault
     object ConnectionTab: TTabItem
@@ -26,8 +26,8 @@ object LEDTech: TLEDTech
       CustomIcon = <
         item
         end>
-      IsSelected = False
-      Size.Width = 135.000000000000000000
+      IsSelected = True
+      Size.Width = 203.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabitemfavorites'
@@ -104,8 +104,8 @@ object LEDTech: TLEDTech
         item
         end>
       Enabled = False
-      IsSelected = True
-      Size.Width = 135.000000000000000000
+      IsSelected = False
+      Size.Width = 200.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabitemcontacts'
@@ -116,24 +116,24 @@ object LEDTech: TLEDTech
         Position.X = 16.000000000000000000
         Position.Y = 24.000000000000000000
         Size.Width = 369.000000000000000000
-        Size.Height = 209.000000000000000000
+        Size.Height = 265.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
       end
       object ColorQuad: TColorQuad
         Alpha = 1.000000000000000000
         ColorBox = ColorBox
-        Lum = 0.465753436088562000
+        Lum = 0.460000008344650300
         Position.X = 16.000000000000000000
-        Position.Y = 248.000000000000000000
-        Sat = 0.487804889678955100
+        Position.Y = 312.000000000000000000
+        Sat = 0.121951222419738800
         Size.Width = 369.000000000000000000
-        Size.Height = 41.000000000000000000
+        Size.Height = 73.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
       end
       object ColorBox: TColorBox
-        Color = xFFB13D3D
+        Color = xFF846767
         Position.X = 16.000000000000000000
         Position.Y = 400.000000000000000000
         Size.Width = 369.000000000000000000
@@ -141,91 +141,6 @@ object LEDTech: TLEDTech
         Size.PlatformDefault = False
         TabOrder = 2
         OnClick = ColorBoxClick
-      end
-      object btnBack: TButton
-        Position.X = 16.000000000000000000
-        Position.Y = 304.000000000000000000
-        Size.Width = 81.000000000000000000
-        Size.Height = 33.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 4
-        Text = '<<<<<'
-        OnClick = btnBackClick
-      end
-      object edtLEDNumber: TEdit
-        Touch.InteractiveGestures = [LongTap, DoubleTap]
-        TabOrder = 5
-        Text = '0'
-        TextSettings.Font.Size = 20.000000000000000000
-        TextSettings.HorzAlign = Center
-        TextSettings.VertAlign = Leading
-        Position.X = 112.000000000000000000
-        Position.Y = 304.000000000000000000
-        Size.Width = 161.000000000000000000
-        Size.Height = 33.000000000000000000
-        Size.PlatformDefault = False
-        StyledSettings = [Family, Style, FontColor]
-      end
-      object btnNext: TButton
-        Position.X = 296.000000000000000000
-        Position.Y = 304.000000000000000000
-        Size.Width = 81.000000000000000000
-        Size.Height = 33.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 3
-        Text = '>>>>>'
-        OnClick = btnNextClick
-      end
-      object btnSelectAll: TSwitch
-        IsChecked = False
-        Position.X = 104.000000000000000000
-        Position.Y = 352.000000000000000000
-        TabOrder = 6
-        OnSwitch = btnSelectAllSwitch
-      end
-      object Label1: TLabel
-        AutoSize = True
-        StyledSettings = [Family, FontColor]
-        Position.X = 24.000000000000000000
-        Position.Y = 352.000000000000000000
-        Size.Width = 73.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.Size = 16.000000000000000000
-        TextSettings.WordWrap = False
-        Text = 'Select All:'
-      end
-    end
-    object OptionsTab: TTabItem
-      CustomIcon = <
-        item
-        end>
-      Enabled = False
-      IsSelected = False
-      Size.Width = 133.000000000000000000
-      Size.Height = 49.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 0
-      Text = 'Options'
-      object OptionsBox: TListBox
-        Position.X = 8.000000000000000000
-        Position.Y = 32.000000000000000000
-        Size.Width = 385.000000000000000000
-        Size.Height = 161.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-        DisableFocusEffect = True
-        ItemHeight = 51.000000000000000000
-        Items.Strings = (
-          'None'
-          'Flickering'
-          'Passing')
-        DefaultItemStyles.ItemStyle = ''
-        DefaultItemStyles.GroupHeaderStyle = ''
-        DefaultItemStyles.GroupFooterStyle = ''
-        OnChange = OptionsBoxChange
-        Viewport.Width = 381.000000000000000000
-        Viewport.Height = 157.000000000000000000
       end
     end
   end

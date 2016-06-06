@@ -31,7 +31,7 @@ type
     function ManagerConnected() :Boolean;
     function PairedDevices : TStringList;                              //Get list of paired devices
     function Find_ServicesList( nPair : integer ) : DServiceListType;   //Get service list
-    function SendData( nPair: Integer; LEDNumber, Option, R, G, B: Byte) : Boolean;        //Send color of LED to STM
+    function SendData( nPair:integer; R, G, B: Byte) : Boolean;        //Send color of LED to STM
    end;
 
 implementation
@@ -129,7 +129,7 @@ end;
 
 //---------------------------------------------------------------------------------------
 // nPair : Paired Device List No
-function TBTMethod.SendData( nPair: Integer; LEDNumber, Option, R, G, B: Byte) : Boolean;
+function TBTMethod.SendData( nPair:integer; R, G, B: Byte) : Boolean;
 var
   ToSend: TBytes;
   LDevice: TBluetoothDevice;
@@ -147,20 +147,11 @@ begin
         begin
           ItemIndex := nPair;
           FSocket.Connect;
-          SetLength(ToSend,1);
-          ToSend[0] := LEDNumber;
-          FSocket.SendData(ToSend);
-          sleep(300);
-          ToSend[0] := Option;
-          FSocket.SendData(ToSend);
-          sleep(300);
+
+          SetLength(ToSend,3);
           ToSend[0] := R;
-          FSocket.SendData(ToSend);
-          sleep(300);
-          ToSend[0] := G;
-          FSocket.SendData(ToSend);
-          sleep(300);
-          ToSend[0] := B;
+          ToSend[1] := G;
+          ToSend[2] := B;
           FSocket.SendData(ToSend);
           result := TRUE;
         end
@@ -173,21 +164,12 @@ begin
 
     else
     begin
-      SetLength(ToSend,1);
-      ToSend[0] := LEDNumber;
-      FSocket.SendData(ToSend);
-      sleep(300);
-      ToSend[0] := Option;
-      FSocket.SendData(ToSend);
-      sleep(300);
+      SetLength(ToSend,3);
       ToSend[0] := R;
-      FSocket.SendData(ToSend);
-      sleep(300);
-      ToSend[0] := G;
-      FSocket.SendData(ToSend);
-      sleep(300);
-      ToSend[0] := B;
-      FSocket.SendData(ToSend);
+      ToSend[1] := G;
+      ToSend[2] := B;
+
+          FSocket.SendData(ToSend);
       result := TRUE;
     end;
 

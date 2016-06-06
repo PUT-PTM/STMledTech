@@ -27,7 +27,7 @@ object LEDTech: TLEDTech
         item
         end>
       IsSelected = False
-      Size.Width = 135.000000000000000000
+      Size.Width = 203.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabitemfavorites'
@@ -103,9 +103,8 @@ object LEDTech: TLEDTech
       CustomIcon = <
         item
         end>
-      Enabled = False
       IsSelected = True
-      Size.Width = 135.000000000000000000
+      Size.Width = 200.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tabitemcontacts'
@@ -150,7 +149,6 @@ object LEDTech: TLEDTech
         Size.PlatformDefault = False
         TabOrder = 4
         Text = '<<<<<'
-        OnClick = btnBackClick
       end
       object edtLEDNumber: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -174,7 +172,6 @@ object LEDTech: TLEDTech
         Size.PlatformDefault = False
         TabOrder = 3
         Text = '>>>>>'
-        OnClick = btnNextClick
       end
       object btnSelectAll: TSwitch
         IsChecked = False
@@ -194,38 +191,6 @@ object LEDTech: TLEDTech
         TextSettings.Font.Size = 16.000000000000000000
         TextSettings.WordWrap = False
         Text = 'Select All:'
-      end
-    end
-    object OptionsTab: TTabItem
-      CustomIcon = <
-        item
-        end>
-      Enabled = False
-      IsSelected = False
-      Size.Width = 133.000000000000000000
-      Size.Height = 49.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 0
-      Text = 'Options'
-      object OptionsBox: TListBox
-        Position.X = 8.000000000000000000
-        Position.Y = 32.000000000000000000
-        Size.Width = 385.000000000000000000
-        Size.Height = 161.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-        DisableFocusEffect = True
-        ItemHeight = 51.000000000000000000
-        Items.Strings = (
-          'None'
-          'Flickering'
-          'Passing')
-        DefaultItemStyles.ItemStyle = ''
-        DefaultItemStyles.GroupHeaderStyle = ''
-        DefaultItemStyles.GroupFooterStyle = ''
-        OnChange = OptionsBoxChange
-        Viewport.Width = 381.000000000000000000
-        Viewport.Height = 157.000000000000000000
       end
     end
   end

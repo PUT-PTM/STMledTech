@@ -27,19 +27,13 @@ type
     btnNext: TButton;
     btnSelectAll: TSwitch;
     Label1: TLabel;
-    OptionsTab: TTabItem;
-    OptionsBox: TListBox;
     procedure GestureDone(Sender: TObject; const EventInfo: TGestureEventInfo; var Handled: Boolean);
     procedure FormCreate(Sender: TObject);
     procedure lbDevicesChange(Sender: TObject);
     procedure ColorBoxClick(Sender: TObject);
     procedure btnSelectAllSwitch(Sender: TObject);
-    procedure btnNextClick(Sender: TObject);
-    procedure btnBackClick(Sender: TObject);
-    procedure OptionsBoxChange(Sender: TObject);
   private
     Bluetooth: TBTMethod; //TBTMethod object
-    LEDNumber, Option, R, G, B: Byte;
   public
   end;
 
@@ -51,38 +45,25 @@ implementation
 {$R *.fmx}
 
 
-procedure TLEDTech.btnBackClick(Sender: TObject);
-begin
-  if LEDNumber = 1 then LEDNumber := 80 else Dec(LEDNumber);
-  edtLEDNumber.Text := IntToStr(LEDNumber);
-end;
-
-procedure TLEDTech.btnNextClick(Sender: TObject);
-begin
-  if LEDNumber = 80 then LEDNumber := 1 else Inc(LEDNumber);
-  edtLEDNumber.Text := IntToStr(LEDNumber);
-end;
-
 procedure TLEDTech.btnSelectAllSwitch(Sender: TObject);
 begin
   if btnSelectAll.IsChecked then
     begin
-      LEDNumber := 101;  //100 - Turn on all diodes
       edtLEDNumber.Enabled := false;
       btnBack.Enabled := false;
       btnNext.Enabled := false;
     end
      else
     begin
-      LedNumber := StrToInt(edtLEDNumber.Text);
-      edtLEDNumber.Enabled := true;
-      btnBack.Enabled := true;
-      btnNext.Enabled := true;
+      edtLEDNumber.Enabled := false;
+      btnBack.Enabled := false;
+      btnNext.Enabled := false;
     end;
 end;
 
 procedure TLEDTech.ColorBoxClick(Sender: TObject);  //Send new color to STM board
 var
+  R, G, B: Byte;
   RGB: Integer;
   Color: TColorRec;
 begin
@@ -91,7 +72,7 @@ begin
   G := (RGB and $0000ff00) shr 8;
   B := RGB and $000000ff;
 
-  Bluetooth.SendData(lbDevices.ItemIndex, LEDNumber - 1, Option, R, G, B);
+  Bluetooth.SendData(lbDevices.ItemIndex, R, G, B);
 end;
 
 procedure TLEDTech.FormCreate(Sender: TObject);
@@ -100,9 +81,6 @@ begin
   TabControl1.ActiveTab := ConnectionTab;
   Bluetooth := TBTMethod.Create;
   lbDevices.Items := Bluetooth.PairedDevices;
-  LEDNumber := 1;
-  Option := 0;
-  edtLEDNumber.Text := IntToStr(LEDNumber);
 end;
 
 procedure TLEDTech.GestureDone(Sender: TObject; const EventInfo: TGestureEventInfo; var Handled: Boolean);
@@ -136,18 +114,12 @@ begin
       Bluetooth.MyDeviceName := DeviceInfo.DServiceName.Text;
 
       ColorTab.Enabled := True;
-      OptionsTab.Enabled := True;
+
 
       lblStatus.Text := 'Connected';
       lblStatus.FontColor := $FF00FF00;
 
     end else ShowMessage('No selected device');
-end;
-
-procedure TLEDTech.OptionsBoxChange(Sender: TObject);
-begin
-  Option := OptionsBox.ItemIndex;
-  Bluetooth.SendData(lbDevices.ItemIndex, LEDNumber - 1, Option, R, G, B);
 end;
 
 end.
