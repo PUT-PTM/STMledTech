@@ -6,8 +6,8 @@ STM_LED_tech is a simple solution to control LED strips via Bluetooth. Thanks to
 This code is prepared for STM32F411E-Disco (100 MHz clock), To use it on another board you schould reconfigure system_stm32f4xx.c file.
 
 ##Tools
-CooCox CoIDE, Version 1.7.8
-Delphi XE 8
+	1.CooCox CoIDE, Version 1.7.8
+	2.Delphi XE 8
 
 
 ##Obligatory equipment:
