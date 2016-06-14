@@ -32,7 +32,7 @@ This code is prepared for STM32F411E-Disco (100 MHz clock), To use it on another
 ##Using
 	1.Compile and flash STM32.
 	2.Pair computer with STM via Bluetooth.
-	3. Compile app controler in Delphi XE 8
+	3. Compile app controler in Delphi XE 8 (Or download last release)
 	4. Cotrol LED via app.
 
 ## Malpfunctions
