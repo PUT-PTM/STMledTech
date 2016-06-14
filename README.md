@@ -7,8 +7,8 @@ This code is prepared for STM32F411E-Disco (100 MHz clock), To use it on another
 
 ##Contents
 
-./LEDTech_App - Application code to control LED Strip (Delphi XE8)
-./WS2811_LED_Controler - Application code for STM32 (CooCox CoIDE).
+1.  ./LEDTech_App - Application code to control LED Strip (Delphi XE8)
+2.  ./WS2811_LED_Controler - Application code for STM32 (CooCox CoIDE).
 
 
 ##Tools
